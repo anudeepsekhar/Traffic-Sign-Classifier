@@ -76,23 +76,17 @@ print("Image data shape =", image_shape)
 print("Number of classes =", n_classes)
 print(len(y_train))
 ```
-
-    Image Shape |  (32, 32, 3)
-    Number of training examples | 34799
-    Number of testing examples | 12630
-    Image data shape | (32, 32, 3)
-    Number of classes | 43
+Type|QTY
+----|----
+Image Shape |  (32, 32, 3)
+Number of training examples | 34799
+Number of testing examples | 12630
+Image data shape | (32, 32, 3)
+Number of classes | 43
     
 
 
 ### An exploratory visualization of the dataset
-
-Visualize the German Traffic Signs Dataset using the pickled file(s). This is open ended, suggestions include: plotting traffic sign images, plotting the count of each sign, etc. 
-
-The [Matplotlib](http://matplotlib.org/) [examples](http://matplotlib.org/examples/index.html) and [gallery](http://matplotlib.org/gallery.html) pages are a great resource for doing visualizations in Python.
-
-**NOTE:** It's recommended you start with something simple first. If you wish to do more, come back to it after you've completed the rest of the sections. It can be interesting to look at the distribution of classes in the training, validation and test set. Is the distribution the same? Are there more examples of some classes than others?
-
 
 ```python
 ### Data exploration visualization code goes here.
@@ -120,7 +114,7 @@ for i in range(10):
      alt="output_8_0"
      style="float: left; margin-right: 10px;" />
 
-The above cell shows few examples of the images present in the training data.
+The above shows few examples of the images present in the training data.
 
 
 ```python
@@ -156,20 +150,12 @@ plt.show()
 
 ## Step 2: Design and Test a Model Architecture
 
-Design and implement a deep learning model that learns to recognize traffic signs. Train and test your model on the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset).
-
-The LeNet-5 implementation shown in the [classroom](https://classroom.udacity.com/nanodegrees/nd013/parts/fbf77062-5703-404e-b60c-95b78b2f3f9e/modules/6df7ae49-c61c-4bb2-a23e-6527e69209ec/lessons/601ae704-1035-4287-8b11-e2c2716217ad/concepts/d4aca031-508f-4e0b-b493-e7b706120f81) at the end of the CNN lesson is a solid starting point. You'll have to change the number of classes and possibly the preprocessing, but aside from that it's plug and play! 
-
-With the LeNet-5 solution from the lecture, you should expect a validation set accuracy of about 0.89. To meet specifications, the validation set accuracy will need to be at least 0.93. It is possible to get an even higher accuracy, but 0.93 is the minimum for a successful project submission. 
-
 There are various aspects to consider when thinking about this problem:
 
 - Neural network architecture (is the network over or underfitting?)
 - Play around preprocessing techniques (normalization, rgb to grayscale, etc)
 - Number of examples per label (some have more than others).
 - Generate fake data.
-
-Here is an example of a [published baseline model on this problem](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.pdf). It's not required to be familiar with the approach used in the paper but, it's good practice to try to read papers like these.
 
 ### Pre-process the Data Set 
 
@@ -188,11 +174,7 @@ You can try different techniques to see if it improves performance.
      - Random Brightness
 
 
-```python
-### Preprocess the data here. It is required to normalize the data. Other preprocessing steps could include 
-### converting to grayscale, etc.
-### Feel free to use as many code cells as needed.
-```
+
 
 **Converting to Grayscale:**
 
@@ -633,15 +615,6 @@ sets imply underfitting. A high accuracy on the training set but low accuracy on
 
 
 ```python
-### Train your model here.
-### Calculate and report the accuracy on the training and validation set.
-### Once a final model architecture is selected, 
-### the accuracy on the test set should be calculated and reported as well.
-### Feel free to use as many code cells as needed.
-```
-
-
-```python
 # Training the model
 
 EPOCHS = 100
@@ -704,412 +677,7 @@ with tf.Session() as sess:
     print("Model saved")
 ```
 
-    Training...
-    
-    EPOCH 1 ...
-    Validation Accuracy = 0.946
-    Test Accuracy = 0.785
-    
-    EPOCH 2 ...
-    Validation Accuracy = 0.971
-    Test Accuracy = 0.854
-    
-    EPOCH 3 ...
-    Validation Accuracy = 0.982
-    Test Accuracy = 0.833
-    
-    EPOCH 4 ...
-    Validation Accuracy = 0.985
-    Test Accuracy = 0.827
-    
-    EPOCH 5 ...
-    Validation Accuracy = 0.980
-    Test Accuracy = 0.844
-    
-    EPOCH 6 ...
-    Validation Accuracy = 0.989
-    Test Accuracy = 0.850
-    
-    EPOCH 7 ...
-    Validation Accuracy = 0.990
-    Test Accuracy = 0.874
-    
-    EPOCH 8 ...
-    Validation Accuracy = 0.973
-    Test Accuracy = 0.867
-    
-    EPOCH 9 ...
-    Validation Accuracy = 0.983
-    Test Accuracy = 0.850
-    
-    EPOCH 10 ...
-    Validation Accuracy = 0.994
-    Test Accuracy = 0.878
-    
-    EPOCH 11 ...
-    Validation Accuracy = 0.990
-    Test Accuracy = 0.888
-    
-    EPOCH 12 ...
-    Validation Accuracy = 0.985
-    Test Accuracy = 0.818
-    
-    EPOCH 13 ...
-    Validation Accuracy = 0.987
-    Test Accuracy = 0.885
-    
-    EPOCH 14 ...
-    Validation Accuracy = 0.988
-    Test Accuracy = 0.866
-    
-    EPOCH 15 ...
-    Validation Accuracy = 0.994
-    Test Accuracy = 0.894
-    
-    EPOCH 16 ...
-    Validation Accuracy = 0.989
-    Test Accuracy = 0.851
-    
-    EPOCH 17 ...
-    Validation Accuracy = 0.990
-    Test Accuracy = 0.902
-    
-    EPOCH 18 ...
-    Validation Accuracy = 0.994
-    Test Accuracy = 0.891
-    
-    EPOCH 19 ...
-    Validation Accuracy = 0.994
-    Test Accuracy = 0.899
-    
-    EPOCH 20 ...
-    Validation Accuracy = 0.995
-    Test Accuracy = 0.879
-    
-    EPOCH 21 ...
-    Validation Accuracy = 0.991
-    Test Accuracy = 0.847
-    
-    EPOCH 22 ...
-    Validation Accuracy = 0.993
-    Test Accuracy = 0.840
-    
-    EPOCH 23 ...
-    Validation Accuracy = 0.995
-    Test Accuracy = 0.892
-    
-    EPOCH 24 ...
-    Validation Accuracy = 0.995
-    Test Accuracy = 0.907
-    
-    EPOCH 25 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.917
-    
-    EPOCH 26 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.915
-    
-    EPOCH 27 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.916
-    
-    EPOCH 28 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.916
-    
-    EPOCH 29 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.916
-    
-    EPOCH 30 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.917
-    
-    EPOCH 31 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.917
-    
-    EPOCH 32 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.917
-    
-    EPOCH 33 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.917
-    
-    EPOCH 34 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.918
-    
-    EPOCH 35 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.918
-    
-    EPOCH 36 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.918
-    
-    EPOCH 37 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.918
-    
-    EPOCH 38 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.918
-    
-    EPOCH 39 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.918
-    
-    EPOCH 40 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.919
-    
-    EPOCH 41 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.919
-    
-    EPOCH 42 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.919
-    
-    EPOCH 43 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.919
-    
-    EPOCH 44 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.919
-    
-    EPOCH 45 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.920
-    
-    EPOCH 46 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.920
-    
-    EPOCH 47 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.921
-    
-    EPOCH 48 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.921
-    
-    EPOCH 49 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.921
-    
-    EPOCH 50 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.921
-    
-    EPOCH 51 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.921
-    
-    EPOCH 52 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.921
-    
-    EPOCH 53 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.921
-    
-    EPOCH 54 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.921
-    
-    EPOCH 55 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.921
-    
-    EPOCH 56 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.921
-    
-    EPOCH 57 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.921
-    
-    EPOCH 58 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.922
-    
-    EPOCH 59 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.922
-    
-    EPOCH 60 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.922
-    
-    EPOCH 61 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.921
-    
-    EPOCH 62 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.922
-    
-    EPOCH 63 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.922
-    
-    EPOCH 64 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.922
-    
-    EPOCH 65 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.922
-    
-    EPOCH 66 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.922
-    
-    EPOCH 67 ...
-    Validation Accuracy = 0.844
-    Test Accuracy = 0.781
-    
-    EPOCH 68 ...
-    Validation Accuracy = 0.989
-    Test Accuracy = 0.858
-    
-    EPOCH 69 ...
-    Validation Accuracy = 0.995
-    Test Accuracy = 0.900
-    
-    EPOCH 70 ...
-    Validation Accuracy = 0.994
-    Test Accuracy = 0.870
-    
-    EPOCH 71 ...
-    Validation Accuracy = 0.994
-    Test Accuracy = 0.914
-    
-    EPOCH 72 ...
-    Validation Accuracy = 0.992
-    Test Accuracy = 0.909
-    
-    EPOCH 73 ...
-    Validation Accuracy = 0.991
-    Test Accuracy = 0.900
-    
-    EPOCH 74 ...
-    Validation Accuracy = 0.987
-    Test Accuracy = 0.874
-    
-    EPOCH 75 ...
-    Validation Accuracy = 0.991
-    Test Accuracy = 0.775
-    
-    EPOCH 76 ...
-    Validation Accuracy = 0.994
-    Test Accuracy = 0.884
-    
-    EPOCH 77 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.862
-    
-    EPOCH 78 ...
-    Validation Accuracy = 0.996
-    Test Accuracy = 0.868
-    
-    EPOCH 79 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.866
-    
-    EPOCH 80 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.866
-    
-    EPOCH 81 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.864
-    
-    EPOCH 82 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.864
-    
-    EPOCH 83 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.863
-    
-    EPOCH 84 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.863
-    
-    EPOCH 85 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.863
-    
-    EPOCH 86 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.863
-    
-    EPOCH 87 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.863
-    
-    EPOCH 88 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.863
-    
-    EPOCH 89 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.862
-    
-    EPOCH 90 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.862
-    
-    EPOCH 91 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.862
-    
-    EPOCH 92 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.861
-    
-    EPOCH 93 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.861
-    
-    EPOCH 94 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.861
-    
-    EPOCH 95 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.861
-    
-    EPOCH 96 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.860
-    
-    EPOCH 97 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.860
-    
-    EPOCH 98 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.859
-    
-    EPOCH 99 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.859
-    
-    EPOCH 100 ...
-    Validation Accuracy = 0.997
-    Test Accuracy = 0.860
-    
-    Model saved
-
-
-
+  
 ```python
 with tf.Session() as sess:
     sess.run(tf.global_variables_initializer())
@@ -1119,19 +687,24 @@ with tf.Session() as sess:
     print("Test Set Accuracy = {:.3f}".format(test_accuracy))
 
 ```
-
-    Test Set Accuracy = 0.959
+Dataset | Accuracy
+--------|----------
+Train Set | 100%
+Validation Set| 99.7%
+Test Set | 95.9%
 
 
 ## Test Set Accuracy of 95.9%....!!!
 
 I used the Adam optimizer (already implemented in the LeNet lab). The final settings used were:
 
-- batch size: 128
-- epochs: 100
-- learning rate: 0.001
-- mu: 0
-- sigma: 0.1
+Hyper Parameter|Value
+---------------|-------
+batch size| 128
+epochs|100
+learning rate| 0.001
+mu| 0
+sigma| 0.1
 
 My approach was a little of both trail and error and educated guesses. I started with pre-defined architectures (LeNet) and almost all of the tweaking from there was a process of trial and error. Thankfully, my guesses were educated thanks to working through the Tensorflow and LeNet labs.
 
@@ -1139,10 +712,6 @@ My approach was a little of both trail and error and educated guesses. I started
 ---
 
 ## Step 3: Test a Model on New Images
-
-To give yourself more insight into how your model is working, download at least five pictures of German traffic signs from the web and use your model to predict the traffic sign type.
-
-You may find `signnames.csv` useful as it contains mappings from the class id (integer) to the actual sign name.
 
 To test the model on new images I collected a few images from the internet and noticed that they all were of different sizes and also the were colored images. Since the model only takes a 32x32x1 image as input i scaled these test images to 32x32 px and then converted them into grayscale images. Now I could test these images with the trained model.
 
@@ -1160,10 +729,6 @@ import cv2
 
 print('done')
 ```
-
-    done
-
-
 
 ```python
 image = cv2.imread("my_traffic_data/00001.jpg")
@@ -1253,46 +818,6 @@ It does a pretty good job in classifying the test images.
 Below I have visualized the Softmax Probabilities for each image I found on the web.
 
 ### Output Top 5 Softmax Probabilities For Each Image Found on the Web
-
-For each of the new images, print out the model's softmax probabilities to show the **certainty** of the model's predictions (limit the output to the top 5 probabilities for each image). [`tf.nn.top_k`](https://www.tensorflow.org/versions/r0.12/api_docs/python/nn.html#top_k) could prove helpful here. 
-
-The example below demonstrates how tf.nn.top_k can be used to find the top k predictions for each image.
-
-`tf.nn.top_k` will return the values and indices (class ids) of the top k predictions. So if k=3, for each sign, it'll return the 3 largest probabilities (out of a possible 43) and the correspoding class ids.
-
-Take this numpy array as an example. The values in the array represent predictions. The array contains softmax probabilities for five candidate images with six possible classes. `tf.nn.top_k` is used to choose the three classes with the highest probability:
-
-```
-# (5, 6) array
-a = np.array([[ 0.24879643,  0.07032244,  0.12641572,  0.34763842,  0.07893497,
-         0.12789202],
-       [ 0.28086119,  0.27569815,  0.08594638,  0.0178669 ,  0.18063401,
-         0.15899337],
-       [ 0.26076848,  0.23664738,  0.08020603,  0.07001922,  0.1134371 ,
-         0.23892179],
-       [ 0.11943333,  0.29198961,  0.02605103,  0.26234032,  0.1351348 ,
-         0.16505091],
-       [ 0.09561176,  0.34396535,  0.0643941 ,  0.16240774,  0.24206137,
-         0.09155967]])
-```
-
-Running it through `sess.run(tf.nn.top_k(tf.constant(a), k=3))` produces:
-
-```
-TopKV2(values=array([[ 0.34763842,  0.24879643,  0.12789202],
-       [ 0.28086119,  0.27569815,  0.18063401],
-       [ 0.26076848,  0.23892179,  0.23664738],
-       [ 0.29198961,  0.26234032,  0.16505091],
-       [ 0.34396535,  0.24206137,  0.16240774]]), indices=array([[3, 0, 5],
-       [0, 1, 4],
-       [0, 5, 1],
-       [1, 3, 5],
-       [1, 4, 3]], dtype=int32))
-```
-
-Looking just at the first row we get `[ 0.34763842,  0.24879643,  0.12789202]`, you can confirm these are the 3 largest probabilities in `a`. You'll also notice `[3, 0, 5]` are the corresponding indices.
-
-
 ```python
 ### Visualize the softmax probabilities here.
 ### Feel free to use as many code cells as needed.
@@ -1419,15 +944,3 @@ print(my_top_k)
            [ 7,  8,  5,  0,  1],
            [26, 18, 24, 15,  4]], dtype=int32))
 
-
-### Project Writeup
-
-Once you have completed the code implementation, document your results in a project writeup using this [template](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_template.md) as a guide. The writeup can be in a markdown or pdf file. 
-
-> **Note**: Once you have completed all of the code implementations and successfully answered each question above, you may finalize your work by exporting the iPython Notebook as an HTML document. You can do this by using the menu above and navigating to  \n",
-    "**File -> Download as -> HTML (.html)**. Include the finished document along with this notebook as your submission.
-
-
-```python
-
-```
