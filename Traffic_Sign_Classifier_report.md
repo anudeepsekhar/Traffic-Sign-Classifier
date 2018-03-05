@@ -127,8 +127,10 @@ for i in range(10):
 ```
 
 
-![png](output_8_0.png)
 
+<img src="/output_images/output_8_0.png"
+     alt="output_8_0"
+     style="float: left; margin-right: 10px;" />
 
 The above cell shows few examples of the images present in the training data.
 
